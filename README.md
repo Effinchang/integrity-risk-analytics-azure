@@ -7,6 +7,7 @@ Cloud-native risk scoring (FastAPI + Streamlit) with Azure-ready CI/CD and Respo
 - Azure Web App ready; secrets via env vars/Key Vault
 - GitHub Actions → test → scan → deploy
 ## Quickstart
+```bash
 pip install -r requirements.txt
-uvicorn app.fastapi_app:app --reload
-streamlit run ui/streamlit_app.py
+uvicorn app.fastapi_app:app --host 0.0.0.0 --port 8000 &
+streamlit run ui/streamlit_app.py --server.address 0.0.0.0 --server.port 8501
